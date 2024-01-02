@@ -12,10 +12,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className="">
-        <header className="">
-          <h1 className='w-full h-auto'>IMG</h1>
-          <div className='text-black'>Menu</div>
-        </header>
+        <header></header>
         <main className="">
           {children}
         </main>
