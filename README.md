@@ -9,3 +9,5 @@
 /scripts: Contains a seeding script that you'll use to populate your database in a later chapter.
 
 Config Files: You'll also notice config files such as next.config.js at the root of your application. Most of these files are created and pre-configured when you start a new project using create-next-app. You will not need to modify them in this course.
+
+Building User stories and preparing mockups
