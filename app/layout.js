@@ -23,10 +23,8 @@ export default function RootLayout({ children }) {
         <body className="dark text-foreground bg-background min-h-screen flex flex-col">
           <Providers>
             <Header />
-            <main className="w-full max-h-full h-full flex flex-col absolute top-0">
-              <section className='w-full h-full bg-white relative top-16'>
+            <main className="w-full min-h-screen h-screen flex">
                 {children}
-              </section>
               </main>
           </Providers>
         </body>

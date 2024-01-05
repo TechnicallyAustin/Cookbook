@@ -4,11 +4,12 @@ import {Navbar, NavbarBrand, NavbarContent,NavbarMenuToggle, NavbarItem, Link, B
 
 export default function Header() {
     const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+    const menuItems = {}
     return (
-      <header className="w-full h-16 bg-red-500 absolute top-0 left-0 z-40">
+      <header className="w-full h-16 absolute top-0 left-0 z-40">
         <Navbar className='w-full h-full flex' isMenuOpen={isMenuOpen} onMenuOpenChange={setIsMenuOpen}>
 
-            <NavbarBrand className='sm:hidden' justify="start">
+            <NavbarBrand className='' justify="start">
                 <h1>Johnson Cookbook</h1>
             </NavbarBrand>
 
