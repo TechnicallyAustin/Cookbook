@@ -12,7 +12,7 @@ import NextImage from "next/image";
 
 export default function MenuCard() {
     return (
-      <Card className="w-full h-full flex md:justify-center md:items-center">
+      <Card className="w-full h-full flex md:h-1/3 md:w-1/3 md:justify-center md:items-center">
         <figure className="w-full h-full flex flex-col justify-around items-center">
           <Image
             as={NextImage}

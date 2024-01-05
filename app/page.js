@@ -2,7 +2,7 @@
 import * as React from "react"
 import {Image} from '@nextui-org/react'
 import NextImage from "next/image"
-import { Button, ButtonGroup } from "@nextui-org/react";
+import { Button,Link, ButtonGroup } from "@nextui-org/react";
 
 
 export default function Home() {
@@ -13,6 +13,8 @@ export default function Home() {
         <h2 className="w-full h-auto text-lg  bg-black bg-opacity-35 rounded-lg backdrop-blur-md text-white p-2 shadow-xl">Discover new recipes or create your own. lets get started</h2>
       <article className="w-full h-auto flex gap-3">
           <Button
+          href="/menu"
+          as={Link}
           color="primary"
           variant="shadow"
           size="large"

@@ -20,13 +20,13 @@ export default function Menu() {
         <MenuCard />
         <MenuCard />
       </section>
-        <section className='w-full h-24 absolute bottom-2 flex justify-center p-1'>
+        <section className='w-full h-24 relative bottom-0 flex justify-center'>
             <Card className='w-full h-full flex flex-row justify-center items-around'>
                 <Image removeWrapper radius="none" src="/photo10.jpeg" alt="" height={"24"} width={"60"} className='object-cover border-r' />
                 <Image removeWrapper radius="none" src="/photo11.jpeg" alt="" height={"24"} width={"60"} className='object-cover border-r' />
                 <Image removeWrapper radius="none" src="/photo12.jpeg" alt="" height={"24"} width={"60"} className='object-cover border-r' />
-                <CardFooter>
-                    <Button variant="shadow" size="lg" color="danger" className='px-2'>
+                <CardFooter className=''>
+                    <Button variant="shadow" size="lg" color="danger" className='w-full px-2'>
                         Feeling Dangerous?
                     </Button>
                 </CardFooter>
