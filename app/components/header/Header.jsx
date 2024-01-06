@@ -5,7 +5,7 @@ import ExpandedMenu from './ExpandedMenu';
 
 export default function Header() {
     const [isMenuOpen, setIsMenuOpen] = React.useState(false);
-    const menuItems = ["Home", "Menu", "Login"]
+    const menuItems = ["Recipes", "Menu", "Login"]
     return (
       <header className="w-full h-16 absolute top-0 left-0 z-40">
         <Navbar
@@ -36,7 +36,7 @@ export default function Header() {
                       ? "danger"
                       : "foreground"
                   }
-                  href="#"
+                  href={`/${item.toLowerCase()}`}
                   size="lg"
                 >
                   {item}

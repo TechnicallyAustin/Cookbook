@@ -1,7 +1,7 @@
 "use-client";
 import React from "react";
 import Layout from "../../layout";
-import NestedLayout from "../../menu/layout";
+import NestedLayout from "../../recipes/layout";
 import CategoryNav from "../../components/categoryNav/CategoryNav";
 import {
   Divider,
@@ -17,34 +17,17 @@ import RecipeCard from "@/app/components/Recipe/RecipeCard";
 
 export default function Entrees() {
   return (
-    <section id="snacks" className="w-full h-full flex flex-col gap-2 p-1">
-      <section className="w-full h-auto">
-        <CategoryNav />
-      </section>
-
-      <Divider />
-
-      <section className="w-full h-4/6 md:flex md:flex-wrap md:h-5/6 md:justify-around md:gap-1 grid grid-cols-2 grid-rows-max gap-3 p-1">
+    <section id="Entrees" className="w-full h-full flex flex-col gap-2 p-1">
+      <header className="w-1/2 h-auto text-xl">
+        <h2>Entrees</h2>
+      </header>
+      <section className="w-full h-full md:flex md:flex-wrap md:h-5/6 md:justify-around justify-center md:gap-1 grid grid-cols-2 grid-rows-max gap-3 p-1">
         <RecipeCard />
         <RecipeCard />
         <RecipeCard />
         <RecipeCard />
         <RecipeCard />
         <RecipeCard />
-        <Divider />
-      </section>
-
-      <section className="w-full h-16 flex justify-center md:absolute md:bottom-0 md:translate-y-12 items-center pt-6">
-        <Pagination
-          showShadow
-          showControls="true"
-          size="md"
-          variant="shadow"
-          color="primary"
-          total={10}
-          initialPage={1}
-          className=""
-        />
       </section>
     </section>
   );
@@ -52,8 +35,10 @@ export default function Entrees() {
 
 Entrees.getLayout = function getLayoout(page) {
   return (
-    <Layout pageTitle={page}>
-      <NestedLayout>{page}</NestedLayout>
+    <Layout>
+      <NestedLayout key={"entrees"} pageTitle={"Entrees"}>
+        {page}
+      </NestedLayout>
     </Layout>
   );
 };

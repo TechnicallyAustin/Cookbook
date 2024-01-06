@@ -12,13 +12,19 @@ import {
 import MenuCard from '../components/menu/MenuCard.jsx';
 
 export default function Menu() {
+    const menuItems = [
+        "Snacks",
+        "Drinks",
+        "Entrees",
+        "Desserts"
+    ]
+
     return (
         <>
       <section className="w-full md:justify-items-center h-5/6 text-black grid grid-cols-2 grid-rows-2 md:flex gap-3 md:gap-6 md:px-6 ">
-        <MenuCard />
-        <MenuCard />
-        <MenuCard />
-        <MenuCard />
+        {menuItems.map((item) => {
+           return  <MenuCard title={item} />
+        })}
       </section>
         <section className='w-full h-24 relative bottom-0 flex justify-center'>
             <Card className='w-full h-full flex flex-row justify-center items-around'>

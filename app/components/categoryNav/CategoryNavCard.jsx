@@ -1,3 +1,4 @@
+'use client'
 import React from 'react'
 import {
   Navbar,
@@ -9,16 +10,21 @@ import {
   Avatar,
   CardBody,
   CardFooter,
-  Button
+  Button,
 } from "@nextui-org/react";
 import NextImage from "next/image"
 
-export default function CategoryNavItem() {
+export default function CategoryNavItem(props) {
+  const title = props.categoryTitle
+  const categoryId = props.categoryTitle.toLowerCase()
+
+
     return (
+
       <Card isFooterBlurred className="w-full h-full grid gird-cols-5 justify-between items-center gap-0">
-          <Image as={NextImage} radius="none" removeWrapper src="/photo4.jpeg" height={24} width={130} alt="" className="w-full h-full object-cover self center row-span-4" />
+          <Image id={categoryId} as={NextImage} radius="none" removeWrapper src={"/photo4.jpeg"} height={24} width={130} alt={"image"} className="w-full h-full object-cover self center row-span-4" />
         <CardFooter className='h-1/4 row-span-1 absolute z-10 bottom-0'>
-          <h2 className="w-full h-full text-sm flex items-center justify-center p-1">Category</h2>
+          <h2 className="w-full h-full text-sm flex items-center justify-center p-1">{props.categoryTitle}</h2>
         </CardFooter>
       </Card>
     );

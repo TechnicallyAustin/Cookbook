@@ -6,6 +6,8 @@ import {
   NavbarItem,
   Link,
   Image,
+  Tabs,
+  Tab,
   Card,
   Avatar,
   CardBody,
@@ -26,7 +28,10 @@ export default function CategoryNav() {
       <section className="w-full h-full flex ">
         <section className="w-full h-32  left-0 top-0 grid grid-cols-4 p-1 gap-3">
             {categories.map((title) => {
-                return <CategoryNavItem key={title}  categoryTitle={title}/>
+                
+                return (
+                         <CategoryNavItem key={title}  categoryTitle={title}/>
+                )
             })}
         </section>
       </section>
