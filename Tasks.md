@@ -1,0 +1,5 @@
+- [] Set up conditional rendering for the Recipes page.
+- [] set up DB connections for recipe population
+- [] set up User Authentication
+- [] Create server and function test suite
+- [] ensure responsiveness
