@@ -1,3 +1,4 @@
+'use clients'
 import * as React from 'react'
 import NextImage from "next/image";
 import {
@@ -15,25 +16,24 @@ import {
   Button,
 } from "@nextui-org/react";
 import CategoryNavItem from './CategoryNavCard';
-const categories = [
-    'Drinks',
-    "Snacks",
-    "Desserts",
-    "Entrees"
-]
 
 
-export default function CategoryNav() {
+
+export default function CategoryNav(props) {
+    const categories = {"Drinks": {drinksToggle}, "Snacks": {snacksToggle}, "Desserts" : {dessertsToggle}, "Entrees" : {entreesToggle}};
+    const {snacksToggle, drinksToggle, dessertsToggle, entreesToggle} = props
+    console.log("props", props,"snacks", snacksToggle)
     return (
       <section className="w-full h-full flex ">
         <section className="w-full h-32  left-0 top-0 grid grid-cols-4 p-1 gap-3">
             {categories.map((title) => {
                 
                 return (
-                         <CategoryNavItem key={title}  categoryTitle={title}/>
+                         <CategoryNavItem key={title}  categoryTitle={title} toggle={title}/>
                 )
             })}
         </section>
       </section>
     );
 }
+ 

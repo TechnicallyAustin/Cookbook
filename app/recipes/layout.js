@@ -1,4 +1,6 @@
-import React from 'react'
+
+'use client'
+import React, {useState} from 'react'
 import CategoryNav from '../components/categoryNav/CategoryNav'
 import {Pagination, Divider} from "@nextui-org/react"
 import RecipeCard from '../components/Recipe/RecipeCard'
@@ -6,14 +8,42 @@ import RecipeCard from '../components/Recipe/RecipeCard'
 export default function layout({children}) {
 console.log(children)
 
-const handlePress = (e) => {
-    console.log("Card Pressed")
-}
+    const [snacksClicked, setSnacksClicked] = useState(false);
+    const [drinksClicked, setDrinksClicked] = useState(false);
+    const [dessertsClicked, setDessertsClicked] = useState(false);
+    const [entreesClicked, setEntreesClicked] = useState(false);
+
+    const snacksToggle = () => {
+        setSnacksClicked(!snacksClicked)
+        setDessertsClicked(false)
+        setDrinksClicked(false)
+        setEntreesClicked(false)
+    }
+    const drinksToggle = () => {
+        setDrinksClicked(!drinksClicked);
+        setSnacksClicked(false);
+        setDessertsClicked(false);
+        setEntreesClicked(false);
+    }
+    const dessertsToggle = () => {
+        setDessertsClicked(!dessertsClicked);
+        setSnacksClicked(false);
+        setDrinksClicked(false);
+        setEntreesClicked(false);
+    }
+    const entreesToggle = () => {
+        setEntreesClicked(!entreesClicked);
+        setSnacksClicked(false);
+        setDessertsClicked(false);
+        setDrinksClicked(false);
+    }
+
+
 
     return (
         <section id="recipes" className="w-full h-5/6 flex flex-col gap-2 p-1 relative top-16 px-4" aria-label="Loading">
       <section className="w-full h-auto">
-        <CategoryNav />
+        <CategoryNav snacks={snacksToggle} drinksToggle={drinksToggle} dessertsToggle={dessertsToggle} entreesToggle={entreesToggle} />
       </section>
 
       <header className='w-full h-auto px-1'>
