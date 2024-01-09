@@ -6,12 +6,12 @@ import {Pagination, Divider} from "@nextui-org/react"
 import RecipeCard from '../components/Recipe/RecipeCard'
 
 export default function layout({children}) {
-console.log(children)
 
     const [snacksClicked, setSnacksClicked] = useState(false);
     const [drinksClicked, setDrinksClicked] = useState(false);
     const [dessertsClicked, setDessertsClicked] = useState(false);
     const [entreesClicked, setEntreesClicked] = useState(false);
+
 
     const snacksToggle = () => {
         setSnacksClicked(!snacksClicked)
@@ -43,12 +43,9 @@ console.log(children)
     return (
         <section id="recipes" className="w-full h-5/6 flex flex-col gap-2 p-1 relative top-16 px-4" aria-label="Loading">
       <section className="w-full h-auto">
-        <CategoryNav snacks={snacksToggle} drinksToggle={drinksToggle} dessertsToggle={dessertsToggle} entreesToggle={entreesToggle} />
+        <CategoryNav snacks={{toggle: snacksToggle, status: snacksClicked}} drinks={{toggle: drinksToggle, status: drinksClicked}} desserts={{toggle: dessertsToggle, status: dessertsClicked }} entrees={{toggle: entreesToggle, status: entreesClicked}}  />
       </section>
 
-      <header className='w-full h-auto px-1'>
-        <h2 className='w-full text-xl'>{""}</h2>
-      </header>
 
       <Divider />
       <section id="" className="w-full h-full md:flex md:flex-wrap md:h-5/6 md:justify-around md:gap-1 gap-3 p-1">
